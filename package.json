@@ -1,0 +1,22 @@
+{
+  "name": "m14-restapibookings",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/annacano0/M14-RestApiBookings.git"
+  },
+  "author": "annacano0",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/annacano0/M14-RestApiBookings/issues"
+  },
+  "homepage": "https://github.com/annacano0/M14-RestApiBookings#readme",
+  "dependencies": {
+    "body-parser": "^1.20.3"
+  }
+}
