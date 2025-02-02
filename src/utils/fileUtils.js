@@ -1,6 +1,8 @@
+import fs from 'node:fs'
+
 export const readData = (selectedModel) =>{
     try{
-        const data= fs.readFileSync(`./dataSource/${selectedModel}.json`)
+        const data= fs.readFileSync(`./src/dataSource/${selectedModel}.json`)
         console.log(data)
         return JSON.parse(data)
     }catch(err){
@@ -10,7 +12,7 @@ export const readData = (selectedModel) =>{
 
 export const writeData = (selectedModel, data) =>{
     try{
-        fs.writeFileSync(`dataSource/${selectedModel}.json`, JSON.stringify(data))
+        fs.writeFileSync(`./src/dataSource/${selectedModel}.json`, JSON.stringify(data))
     }catch{
         console.log(err)
     }
