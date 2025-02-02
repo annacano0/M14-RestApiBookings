@@ -1,4 +1,202 @@
-GET HTTP://LOCALHOST:3000/
+GET http://localhost:3000/
 
-### Get all users
-GET HTTP://LOCALHOST:3000/users
+########################## USERS ##############################
+
+# Get all users
+GET http://localhost:3000/users
+
+
+# Get user by id
+GET http://localhost:3000/users/1
+
+#Post new user
+POST http://localhost:3000/users HTTP/1.1
+Content-Type: application/json
+{
+    "nom": "Juana de Arco",
+    "email": "maria.lopez@example.com",
+    "rol": "client",
+    "contrasenya": "hashed_password",
+}
+
+#Update user by id
+PUT http://localhost:3000/users/1 HTTP/1.1
+Content-Type: application/json
+{
+    "nom": "Maria López Updated",
+    "email": "maria.lopez@example.com",
+    "rol": "client",
+    "contrasenya": "hashed_password",
+}
+
+#Delete user by id
+DELETE http://localhost:3000/users/1
+
+
+
+
+
+########################## RESOURCES ##################################
+
+# Get all resources
+GET http://localhost:3000/resources
+
+
+# Get resource by id
+GET http://localhost:3000/resources/1
+
+#Post new resource
+POST http://localhost:3000/resources HTTP/1.1
+Content-Type: application/json
+{
+    "nom": "Sala de reunions A",
+    "tipus": "sala",
+    "ubicació": "Planta 1, Edifici B",
+    "descripció": "Sala equipada amb projector i capacitat per a 10 persones",
+    "estat": "ocupat",
+    "característiques": {
+      "capacitat": 10,
+      "equipament": ["projector", "pissarra"]
+    }
+}
+
+#Update resource by id
+PUT http://localhost:3000/resources/1 HTTP/1.1
+Content-Type: application/json
+{
+    "id": "101",
+    "nom": "Sala de reunions A",
+    "tipus": "sala",
+    "ubicació": "Planta 1, Edifici B",
+    "descripció": "Sala equipada amb projector i capacitat per a 10 persones",
+    "estat": "disponible",
+    "característiques": {
+      "capacitat": 10,
+      "equipament": ["projector", "pissarra"]
+    }
+  }
+
+
+#Delete resource by id
+DELETE http://localhost:3000/resources/1
+
+
+
+########################## RESOURCES ##############################
+
+# Get all resources
+GET http://localhost:3000/resources
+
+
+# Get resource by id
+GET http://localhost:3000/resources/1
+
+#Post new resource
+POST http://localhost:3000/resources HTTP/1.1
+Content-Type: application/json
+{
+    "nom": "Sala de reunions A",
+    "tipus": "sala",
+    "ubicació": "Planta 1, Edifici B",
+    "descripció": "Sala equipada amb projector i capacitat per a 10 persones",
+    "estat": "ocupat",
+    "característiques": {
+      "capacitat": 10,
+      "equipament": ["projector", "pissarra"]
+    }
+}
+
+#Update resource by id
+PUT http://localhost:3000/resources/1 HTTP/1.1
+Content-Type: application/json
+{
+    "id": "101",
+    "nom": "Sala de reunions A",
+    "tipus": "sala",
+    "ubicació": "Planta 1, Edifici B",
+    "descripció": "Sala equipada amb projector i capacitat per a 10 persones",
+    "estat": "disponible",
+    "característiques": {
+      "capacitat": 10,
+      "equipament": ["projector", "pissarra"]
+    }
+  }
+
+
+#Delete resource by id
+DELETE http://localhost:3000/resources/1
+
+########################## BOOKINGS ##############################
+
+# Get all bookings
+GET http://localhost:3000/bookings
+
+
+# Get booking by id
+GET http://localhost:3000/bookings/1
+
+#Post new booking
+POST http://localhost:3000/bookings HTTP/1.1
+Content-Type: application/json
+{
+    "id": "5001",
+    "id_usuari": "1",
+    "id_recurs": "101",
+    "data_inici": "2024-01-15T10:00:00",
+    "data_fi": "2024-01-15T12:00:00",
+    "estat": "activa",
+    "comentaris": "Reunió amb l'equip de disseny"
+  }
+ 
+#Update booking by id
+PUT http://localhost:3000/bookings/1 HTTP/1.1
+Content-Type: application/json
+{
+    "id_usuari": "1",
+    "id_recurs": "101",
+    "data_inici": "2024-01-15T10:00:00",
+    "data_fi": "2024-01-15T12:00:00",
+    "estat": "activa",
+    "comentaris": "Reunió amb l'equip de disseny actualitzat"
+}
+ 
+
+
+#Delete booking by id
+DELETE http://localhost:3000/bookings/1
+
+########################## NOTIFICATIONS ##############################
+
+
+# Get all notifications
+GET http://localhost:3000/notifications
+
+
+# Get notification by id
+GET http://localhost:3000/notifications/5001
+
+#Post new notification
+POST http://localhost:3000/notifications HTTP/1.1
+Content-Type: application/json
+{
+    "id_usuari": "1",
+    "tipus": "reserva confirmada",
+    "missatge": "La teva reserva de la Sala de reunions B ha estat confirmada.",
+    "data": "2024-01-10T08:00:00"
+}
+  
+ 
+#Update notification by id
+PUT http://localhost:3000/notifications/5001 HTTP/1.1
+Content-Type: application/json
+{
+    "id_usuari": "1",
+    "tipus": "reserva cancelada",
+    "missatge": "La teva reserva de la Sala de reunions A ha estat confirmada.",
+    "data": "2024-01-10T08:00:00"
+}
+  
+
+
+#Delete notification by id
+DELETE http://localhost:3000/notifications/1
